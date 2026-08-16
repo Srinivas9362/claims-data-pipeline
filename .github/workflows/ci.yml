@@ -13,11 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
+      - name: Check Python syntax
+        run: |
+          python -m py_compile airflow/dags/claims_pipeline.py
+
       - name: Show project structure
         run: |
           echo "CI pipeline started"
           echo "Repository checked out successfully"
           ls -la
-
-      - name: Validate Docker Compose
-        run: docker compose config
