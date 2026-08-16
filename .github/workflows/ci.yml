@@ -17,6 +17,13 @@ jobs:
         run: |
           python -m py_compile airflow/dags/claims_pipeline.py
 
+      - name: Validate Airflow DAG
+        run: |
+          docker run --rm \
+            -v "$PWD/airflow/dags:/opt/airflow/dags" \
+            apache/airflow:3.0.2 \
+            airflow dags list
+
       - name: Show project structure
         run: |
           echo "CI pipeline started"
