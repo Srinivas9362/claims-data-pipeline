@@ -28,3 +28,12 @@ jobs:
       - name: Test S3 access
         run: |
           aws s3 ls
+
+      - name: Test S3 upload
+        run: |
+          echo "GitHub Actions deployment test" > deployment-test.txt
+          aws s3 cp deployment-test.txt s3://claims-data-pipeline-2026-0808/test/deployment-test.txt
+
+      - name: Verify S3 upload
+        run: |
+          aws s3 ls s3://claims-data-pipeline-2026-0808/test/
