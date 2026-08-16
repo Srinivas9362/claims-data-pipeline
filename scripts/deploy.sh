@@ -6,7 +6,7 @@ echo "======================================"
 echo "Starting Claims Data Pipeline Deploy"
 echo "======================================"
 
-cd ~/claims-data-pipeline
+cd /home/ec2-user/claims-data-pipeline
 
 echo ">>> Fetching latest code..."
 git fetch origin main
