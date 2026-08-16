@@ -1,0 +1,23 @@
+name: Claims Data Pipeline CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show project structure
+        run: |
+          echo "CI pipeline started"
+          echo "Repository checked out successfully"
+          ls -la
+
+      - name: Validate Docker Compose
+        run: docker compose config
