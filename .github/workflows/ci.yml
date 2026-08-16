@@ -24,7 +24,8 @@ jobs:
             apache/airflow:3.0.2 \
             bash -c "
               airflow db migrate &&
-              airflow dags list
+              airflow dags list &&
+              airflow tasks list claims_pipeline
             "
 
       - name: Show project structure
