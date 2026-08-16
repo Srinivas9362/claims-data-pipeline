@@ -47,3 +47,4 @@ jobs:
             --command-id "$COMMAND_ID" \
             --instance-id i-081f6a4b2ef2e8ac6 \
             --region us-east-1
+            --query '{Status:Status,ResponseCode:ResponseCode,Output:StandardOutputContent,Error:StandardErrorContent}'
