@@ -24,3 +24,7 @@ jobs:
       - name: Verify AWS identity
         run: |
           aws sts get-caller-identity
+
+      - name: Test S3 access
+        run: |
+          aws s3 ls
