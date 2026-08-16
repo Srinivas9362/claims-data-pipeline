@@ -1,0 +1,10 @@
+*/.env
+Don't track:
+.env
+.env.*
+!.env.example
+
+__pycache__/
+*.pyc
+
+*airflow/logs/
