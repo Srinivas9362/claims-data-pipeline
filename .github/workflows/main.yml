@@ -34,7 +34,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids i-081f6a4b2ef2e8ac6 \
             --document-name "AWS-RunShellScript" \
-            --parameters 'commands=["cd ~/claims-data-pipeline && ./scripts/deploy.sh"]' \
+            --parameters 'commands=["cd /home/ec2-user/claims-data-pipeline && ./scripts/deploy.sh"]' \
             --region us-east-1 \
             --query 'Command.CommandId' \
             --output text)
