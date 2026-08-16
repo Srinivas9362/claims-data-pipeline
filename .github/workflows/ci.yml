@@ -22,7 +22,10 @@ jobs:
           docker run --rm \
             -v "$PWD/airflow/dags:/opt/airflow/dags" \
             apache/airflow:3.0.2 \
-            airflow dags list
+            bash -c "
+              airflow db migrate &&
+              airflow dags list
+            "
 
       - name: Show project structure
         run: |
