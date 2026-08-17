@@ -15,6 +15,11 @@ git fetch origin main
 echo ">>> Resetting to origin/main..."
 git reset --hard origin/main
 
+echo ">>> Preparing Airflow log directory..."
+mkdir -p "$REPO/airflow/logs"
+sudo chown -R 50000:0 "$REPO/airflow/logs"
+sudo chmod -R 775 "$REPO/airflow/logs"
+
 echo ">>> Validating Docker Compose..."
 docker compose config --quiet
 
