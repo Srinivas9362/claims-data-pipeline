@@ -10,10 +10,10 @@ echo "======================================"
 cd "$REPO"
 
 echo ">>> Fetching latest code..."
-sudo -u ec2-user git fetch origin main
+git fetch origin main
 
 echo ">>> Resetting to origin/main..."
-sudo -u ec2-user git reset --hard origin/main
+git reset --hard origin/main
 
 echo ">>> Validating Docker Compose..."
 docker compose config --quiet
