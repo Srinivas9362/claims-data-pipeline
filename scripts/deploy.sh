@@ -7,6 +7,9 @@ echo "======================================"
 
 cd /home/ec2-user/claims-data-pipeline
 
+echo ">>> Configuring Git safe directory..."
+git config --global --add safe.directory /home/ec2-user/claims-data-pipeline
+
 echo ">>> Fetching latest code..."
 git fetch origin main
 
