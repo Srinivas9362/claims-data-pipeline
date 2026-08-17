@@ -1,20 +1,19 @@
 #!/bin/bash
 set -e
 
+REPO="/home/ec2-user/claims-data-pipeline"
+
 echo "======================================"
 echo "Starting Claims Data Pipeline Deploy"
 echo "======================================"
 
-cd /home/ec2-user/claims-data-pipeline
-
-echo ">>> Configuring Git safe directory..."
-git config --global --add safe.directory /home/ec2-user/claims-data-pipeline
+cd "$REPO"
 
 echo ">>> Fetching latest code..."
-git fetch origin main
+sudo -u ec2-user git fetch origin main
 
 echo ">>> Resetting to origin/main..."
-git reset --hard origin/main
+sudo -u ec2-user git reset --hard origin/main
 
 echo ">>> Validating Docker Compose..."
 docker compose config --quiet
