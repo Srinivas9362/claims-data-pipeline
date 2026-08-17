@@ -34,7 +34,7 @@ jobs:
           COMMAND_ID=$(aws ssm send-command \
             --instance-ids i-081f6a4b2ef2e8ac6 \
             --document-name "AWS-RunShellScript" \
-            --parameters 'commands=["sudo -u ec2-user -H bash -c '\''cd /home/ec2-user/claims-data-pipeline && ./scripts/deploy.sh'\''"]' \
+            --parameters 'commands=["sudo -u ec2-user -H bash -c '\''cd /home/ec2-user/claims-data-pipeline && docker compose ps -a && echo === AIRFLOW INIT LOGS === && docker compose logs airflow-init --tail=100'\''"]'
             --region us-east-1 \
             --query 'Command.CommandId' \
             --output text)
