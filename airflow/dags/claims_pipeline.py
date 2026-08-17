@@ -132,6 +132,7 @@ def generate_run_context(**context):
     print("================================")
     print("PIPELINE RUN CONTEXT")
     print("================================")
+    print("Claims Pipeline - Version 2")
 
     print(
         f"RUN ID       : {run_id}"
